@@ -22,9 +22,9 @@ def quote(s):
     - Python 2 requires str, not unicode
     - always return unicode
     """
-    s = py3compat.cast_bytes_py2(s)
+    s = py3compat.cast_bytes_py2(s, 'utf8')
     quoted = stdlib_quote(s)
-    return py3compat.str_to_unicode(quoted)
+    return py3compat.str_to_unicode(quoted, 'utf8')
 
 
 def url_path_join(*pieces):
